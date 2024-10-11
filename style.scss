@@ -1,0 +1,304 @@
+
+.articles {
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+
+    &-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+
+        &-title {
+            font-size: 24px;
+            color: white; // Asegúrate de que el color contraste
+        }
+
+        &-button {
+            background-color: #35797b; // Ejemplo de color para el botón
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: darken(#35797b, 10%);
+            }
+        }
+    }
+
+    &-container {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+
+        &-category {
+            padding: 8px;
+            margin: 20px 0 0 20px;
+            border-radius: 8px;
+            position: absolute;
+            background-color: #e8fcde;
+            color: #35797b;
+        }
+
+        &-image {
+            width: 370px;
+            height: 300px; // Asegúrate de que tenga la unidad
+
+            &-article {
+                width: 100%;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+        }
+    }
+
+    // Estilo para cada artículo
+    .article {
+        background-color: white;
+        border-radius: 10px;
+        width: 370px;
+        height: auto; // Ajuste automático a contenido
+        box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.08);
+        position: relative; // Necesario para que el .category se posicione correctamente
+
+        &-category {
+            padding: 8px;
+            margin: 20px 0 0 20px;
+            border-radius: 8px;
+            position: absolute;
+            background-color: #e8fcde;
+            color: #35797b;
+        }
+
+        &-image {
+            width: 100%;
+            height: auto; // Para que la imagen mantenga su proporción
+
+            &-article {
+                width: 100%;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+        }
+
+        &-title {
+            font-size: 20px;
+            margin: 16px;
+            color: #333; // Color del texto del título
+        }
+
+        &-paragraph {
+            margin: 16px;
+            color: #666; // Color del texto del párrafo
+        }
+    }
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .hero-section {
+    background-color: #E7F7E1;
+    padding: 80px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  
+    .hero-content {
+      max-width: 600px;
+      z-index: 2;
+  
+      h1 {
+        font-size: 2.5rem;
+        color: #1F2B4B;
+        margin-bottom: 20px;
+      }
+  
+      p {
+        font-size: 1.125rem;
+        color: #6C7A89;
+        margin-bottom: 30px;
+      }
+  
+      .btn {
+        background-color: #1F2B4B;
+        color: white;
+        padding: 15px 30px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+  
+        &:hover {
+          background-color: #3A4A6A;
+        }
+      }
+    }
+  
+    .hero-images {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+  
+      .circle-image {
+        position: absolute;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      }
+  
+      .circle-1 {
+        top: 50px;
+        left: 20px;
+        background-color: #E0F0FF;
+      }
+  
+      .circle-2 {
+        top: 120px;
+        right: 30px;
+        background-color: #FDE0E0;
+      }
+  
+      .circle-3 {
+        bottom: 50px;
+        left: 80px;
+        background-color: #FFF0D4;
+      }
+  
+      .circle-4 {
+        bottom: 100px;
+        right: 100px;
+        background-color: #E0F0FF;
+      }
+  
+      .circle-5 {
+        top: 200px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #FDE0E0;
+      }
+    }
+  }
+  
+  /* RESPONSIVE DESIGN */
+  
+  /* Tablets */
+  @media (max-width: 768px) {
+    .hero-content {
+      h1 {
+        font-size: 2rem;
+      }
+  
+      p {
+        font-size: 1rem;
+      }
+  
+      .btn {
+        font-size: 0.9rem;
+        padding: 12px 25px;
+      }
+    }
+  
+    .hero-images {
+      .circle-image {
+        width: 80px;
+        height: 80px;
+      }
+  
+      .circle-1 {
+        top: 30px;
+        left: 10px;
+      }
+  
+      .circle-2 {
+        top: 100px;
+        right: 20px;
+      }
+  
+      .circle-3 {
+        bottom: 40px;
+        left: 60px;
+      }
+  
+      .circle-4 {
+        bottom: 80px;
+        right: 80px;
+      }
+  
+      .circle-5 {
+        top: 180px;
+      }
+    }
+  }
+  
+  /* Mobile Phones */
+  @media (max-width: 480px) {
+    .hero-content {
+      h1 {
+        font-size: 1.5rem;
+      }
+  
+      p {
+        font-size: 0.9rem;
+      }
+  
+      .btn {
+        font-size: 0.8rem;
+        padding: 10px 20px;
+      }
+    }
+  
+    .hero-images {
+      .circle-image {
+        width: 60px;
+        height: 60px;
+      }
+  
+      .circle-1 {
+        top: 20px;
+        left: 5px;
+      }
+  
+      .circle-2 {
+        top: 80px;
+        right: 15px;
+      }
+  
+      .circle-3 {
+        bottom: 30px;
+        left: 40px;
+      }
+  
+      .circle-4 {
+        bottom: 60px;
+        right: 50px;
+      }
+  
+      .circle-5 {
+        top: 150px;
+      }
+    }
+  }
+  
+  
